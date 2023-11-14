@@ -12,5 +12,6 @@ namespace LanchesMac.Context
 
         public DbSet<Categoria> categorias { get; set; }
         public DbSet<Lanche> Lanches { get; set; }
+        public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
     }
 }
