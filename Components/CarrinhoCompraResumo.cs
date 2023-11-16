@@ -17,12 +17,12 @@ namespace LanchesMac.Components
         {
             // igual o index de carrinhocompracontroller
 
-            //var itens = _carrinhoCompra.GetCarrinhoCompraItens();
-            var itens = new List<CarrinhoCompraItem>()
-            {
-                new CarrinhoCompraItem(),
-                new CarrinhoCompraItem()
-            };
+            var itens = _carrinhoCompra.GetCarrinhoCompraItens();
+            //var itens = new List<CarrinhoCompraItem>()
+            //{
+            //    new CarrinhoCompraItem(),
+            //    new CarrinhoCompraItem()
+            //};
 
             _carrinhoCompra.CarrinhoCompraItems = itens;
 
