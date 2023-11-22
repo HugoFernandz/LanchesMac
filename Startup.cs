@@ -39,7 +39,7 @@ public class Startup
 
         services.AddTransient<ILancheRepository, LancheRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
-        services.AddTransient<IPedidoRepository, PedidoRepository>();        
+        services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddScoped(sp => CarrinhoCompra.GetCarrinho(sp));
 
@@ -72,11 +72,16 @@ public class Startup
 
         app.UseEndpoints(endpoints =>
         {
+            endpoints.MapControllerRoute(
+              name: "areas",
+              pattern: "{area:exists}/{controller=Admin}/{action=Index}/{id?}"
+            );
+
             //endpoints.MapControllerRoute(
             //    name: "teste",
             //    pattern: "testme",
             //    defaults: new { controller = "teste", Action = "index" });
-            
+
             endpoints.MapControllerRoute(
                 name: "categoriaFiltro",
                 pattern: "Lanche/{action}/{categoria?}",
