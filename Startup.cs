@@ -79,7 +79,7 @@ public class Startup
         app.UseStaticFiles();
         app.UseRouting();
 
-        //cria perfis
+        // cria perfis
         seedUserRoleInitial.SeedRoles();
 
         // cria usuarios e atributos ao perfil

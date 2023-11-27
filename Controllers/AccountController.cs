@@ -88,5 +88,9 @@ namespace LanchesMac.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }
