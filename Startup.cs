@@ -18,7 +18,7 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
-    // This method gets called by the runtime. Use this method to add services to the container.
+    // ConfigureService no program fica entre a var builder e var app. exemplo... services.AddDbContext = builder.Service.AddDbContext
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddDbContext<AppDbContext>(options =>
@@ -75,7 +75,7 @@ public class Startup
 
     }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    // Configure no program fica entre var app e app.run. exemplo env.IsDevelopment = app.Environment.IsDevelopment ---- 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ISeedUserRoleInitial seedUserRoleInitial)
     {
         if (env.IsDevelopment())
